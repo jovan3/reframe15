@@ -1,6 +1,6 @@
 # rframe15
 
-A [re-frame](https://github.com/day8/re-frame) 15-puzzle(https://en.wikipedia.org/wiki/15_puzzle) implementation.
+A [re-frame](https://github.com/day8/re-frame) [15-puzzle](https://en.wikipedia.org/wiki/15_puzzle) implementation.
 
 ## Requirements
 
