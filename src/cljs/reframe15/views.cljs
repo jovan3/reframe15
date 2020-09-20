@@ -13,4 +13,4 @@
          [:div
           {:class class
            :on-click #(re-frame/dispatch [::events/highlight-tile label])}
-          label]))]))
+          (if (= label 0) nil label)]))]))
