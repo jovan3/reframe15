@@ -13,5 +13,5 @@ Run `lein watch` in the project root directory.
 ## Preview
 
 <p align="center">
-  <img width="800" height="400" src="https://raw.githubusercontent.com/jovan3/reframe15/master/doc/screen.gif">
+  <img src="https://raw.githubusercontent.com/jovan3/reframe15/master/doc/screen.gif">
 </p>
