@@ -37,10 +37,18 @@
      {:db (assoc db :highlighted new-highlighted)
       :dispatch [::change-tile current-highlighted new-highlighted]})))
 
-(re-frame/reg-event-db
+(re-frame/reg-event-fx
  ::change-tile
- (fn [db [_ old-tile new-tile]]
-   (let [current-tiles (db :tiles)]
-     (if (valid-move? current-tiles old-tile new-tile)
-       (assoc db :tiles (swap current-tiles 0 old-tile))
-       db))))
+ (fn [{:keys [db]} [_ old-tile new-tile]]
+   (let [current-tiles (db :tiles)
+         move-tile? (valid-move? current-tiles old-tile new-tile)]
+     {:db (if move-tile?
+            (assoc db :tiles (swap current-tiles 0 old-tile))
+            db)
+      :dispatch [::increase-moves-counter move-tile?]})))
+
+(re-frame/reg-event-db
+ ::increase-moves-counter
+ (fn [db [_ move-tile?]]
+   (let [moves (db :moves)]
+     (if move-tile? (assoc db :moves (inc moves)) db))))

@@ -16,3 +16,8 @@
  ::highlighted
  (fn [db]
    (:highlighted db)))
+
+(re-frame/reg-sub
+ ::moves
+ (fn [db]
+   (:moves db)))

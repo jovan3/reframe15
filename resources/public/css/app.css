@@ -39,3 +39,9 @@
     justify-content: center;
     align-items: center;
 }
+
+.moves-counter
+{
+    justify-content: center;
+    display: flex;
+}

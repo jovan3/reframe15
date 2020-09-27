@@ -2,4 +2,5 @@
 
 (def default-db
   {:tiles (shuffle (range 0 16))
-   :highlighted 0})
+   :highlighted 0
+   :moves 0})
